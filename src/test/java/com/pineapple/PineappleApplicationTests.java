@@ -1,4 +1,4 @@
-package com.pineapple.pineapple;
+package com.pineapple;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

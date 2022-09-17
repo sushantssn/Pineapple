@@ -1,4 +1,4 @@
-package com.pineapple.pineapple;
+package com.pineapple;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

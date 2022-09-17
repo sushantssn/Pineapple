@@ -27,7 +27,6 @@ import com.pineapple.pojo.JwtResponse;
     public class JwtAuthenticationController {
 
         @Autowired
-        @Lazy
         private AuthenticationManager authenticationManager;
 
         @Autowired

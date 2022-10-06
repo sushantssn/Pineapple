@@ -1,9 +1,9 @@
 package com.pineapple.controller;
 
+import com.pineapple.model.UserDTO;
 import com.pineapple.service.JwtUserDetailsService;
-import com.pineapple.utils.JwtTokenUtil;
+import com.pineapple.config.JwtTokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -37,7 +37,7 @@ import com.pineapple.pojo.JwtResponse;
 
         @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
         public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
-
+            System.out.println("Step4 : Request coming into Controller ");
             authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 
             final UserDetails userDetails = userDetailsService
@@ -46,6 +46,12 @@ import com.pineapple.pojo.JwtResponse;
             final String token = jwtTokenUtil.generateToken(userDetails);
 
             return ResponseEntity.ok(new JwtResponse(token));
+        }
+
+
+        @RequestMapping(value = "/register", method = RequestMethod.POST)
+        public ResponseEntity<?> saveUser(@RequestBody UserDTO user) throws Exception {
+            return ResponseEntity.ok(userDetailsService.save(user));
         }
 
         private void authenticate(String username, String password) throws Exception {

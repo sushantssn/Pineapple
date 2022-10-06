@@ -1,4 +1,4 @@
-package com.pineapple.utils;
+package com.pineapple.config;
 
 import java.io.IOException;
 
@@ -32,7 +32,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
             throws ServletException, IOException {
-
+        System.out.println("Step1 : Request coming into Filter ");
         final String requestTokenHeader = request.getHeader("Authorization");
 
         String username = null;
@@ -49,6 +49,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
                 System.out.println("JWT Token has expired");
             }
         } else {
+            System.out.println("Step2 : Request coming into Filter without token ");
             logger.warn("JWT Token does not begin with Bearer String");
         }
 

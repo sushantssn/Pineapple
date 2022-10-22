@@ -26,7 +26,7 @@ import com.pineapple.pojo.JwtResponse;
     @CrossOrigin
     public class JwtAuthenticationController {
 
-        @Autowired
+        //@Autowired
         private AuthenticationManager authenticationManager;
 
         @Autowired

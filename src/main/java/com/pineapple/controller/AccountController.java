@@ -13,10 +13,22 @@ public class AccountController {
     @Autowired
     AccountSummary accountSummary;
 
-    @PostMapping("/getuseraccount")
-    public ModelAndView getUserAccount(@RequestBody UserDTO userDTO){
-        ModelAndView modelAndView = new ModelAndView("login");
-        modelAndView.getModelMap().put("todo-list",accountSummary.getAll(userDTO.getId()));
+    @GetMapping("/")
+    public ModelAndView showWelcomePage(){
+        ModelAndView modelAndView = new ModelAndView("welcome");
+        return modelAndView;
+    }
+    @GetMapping("/getuseraccount")
+    public ModelAndView getUserAccount(){
+        ModelAndView modelAndView = new ModelAndView("list-todos");
+        modelAndView.getModelMap().put("todos",accountSummary.getAll());
+        return modelAndView;
+    }
+
+    @GetMapping("/update-todo")
+    public ModelAndView getUserAccount(@RequestParam int id){
+        ModelAndView modelAndView = new ModelAndView("todo");
+        modelAndView.getModelMap().put("Account",accountSummary.findById(id));
         return modelAndView;
     }
 

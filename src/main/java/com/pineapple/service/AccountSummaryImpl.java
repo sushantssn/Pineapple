@@ -12,6 +12,12 @@ public class AccountSummaryImpl implements AccountSummary{
     @Autowired
     AccountRepository accountRepository;
 
+    public List<Account> getAll() {
+        List<Account> accountList = accountRepository.findAll();
+        return accountList;
+    }
+
+
     public List<Account> getAll(int id) {
       List<Account> accountList = accountRepository.findByUserId(id);
         return accountList;
@@ -30,6 +36,11 @@ public class AccountSummaryImpl implements AccountSummary{
     @Override
     public void delete(Account account) {
         accountRepository.delete(account);
+    }
+
+    @Override
+    public Account findById(int id) {
+        return accountRepository.findById(id).get();
     }
 
 

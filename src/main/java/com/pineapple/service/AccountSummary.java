@@ -5,6 +5,7 @@ import java.util.List;
 
 public interface AccountSummary {
 
+    public List<Account> getAll();
     public List<Account> getAll(int id);
 
     void add(Account account);
@@ -12,4 +13,6 @@ public interface AccountSummary {
     void update(Account account);
 
     void delete(Account account);
+
+    Account findById(int id);
 }

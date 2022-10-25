@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class AccountSummaryImpl implements AccountSummary{
 
@@ -40,7 +42,13 @@ public class AccountSummaryImpl implements AccountSummary{
 
     @Override
     public Account findById(int id) {
-        return accountRepository.findById(id).get();
+
+        Optional<Account> account = accountRepository.findById(id);
+        if(account.isEmpty()){
+            return null;
+        }else{
+            return account.get();
+        }
     }
 
 

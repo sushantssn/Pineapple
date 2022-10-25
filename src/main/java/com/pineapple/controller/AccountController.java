@@ -28,7 +28,7 @@ public class AccountController {
     @GetMapping("/update-todo")
     public ModelAndView getUserAccount(@RequestParam int id){
         ModelAndView modelAndView = new ModelAndView("todo");
-        modelAndView.getModelMap().put("Account",accountSummary.findById(id));
+        modelAndView.getModelMap().put("Account",(accountSummary.findById(id) == null) ? null : accountSummary.findById(id));
         return modelAndView;
     }
 
@@ -38,13 +38,13 @@ public class AccountController {
         return ResponseEntity.ok("Account added Successfully");
     }
 
-    @PostMapping("/updateuseraccount")
+    @PutMapping("/updateuseraccount")
     public ResponseEntity<?> updateUserAccount(@RequestBody Account account){
         accountSummary.update(account);
         return ResponseEntity.ok("Account added Successfully");
     }
 
-    @PostMapping("/deleteuseraccount")
+    @DeleteMapping("/deleteuseraccount")
     public ResponseEntity<?> deleteUserAccount(@RequestBody Account account){
         accountSummary.delete(account);
         return ResponseEntity.ok("Account added Successfully");

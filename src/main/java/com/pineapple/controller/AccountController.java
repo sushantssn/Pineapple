@@ -1,6 +1,6 @@
 package com.pineapple.controller;
 
-import com.pineapple.model.UserDTO;
+import com.pineapple.dto.AccountDTO;
 import com.pineapple.pojo.Account;
 import com.pineapple.service.AccountSummary;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,20 +33,20 @@ public class AccountController {
     }
 
     @PostMapping("/adduseraccount")
-    public ResponseEntity<?> addUserAccount(@RequestBody Account account){
-       accountSummary.add(account);
+    public ResponseEntity<?> addUserAccount(@RequestBody AccountDTO accountDTO){
+       accountSummary.add(accountDTO);
         return ResponseEntity.ok("Account added Successfully");
     }
 
     @PutMapping("/updateuseraccount")
-    public ResponseEntity<?> updateUserAccount(@RequestBody Account account){
-        accountSummary.update(account);
+    public ResponseEntity<?> updateUserAccount(@RequestBody AccountDTO accountDTO){
+        accountSummary.update(accountDTO);
         return ResponseEntity.ok("Account added Successfully");
     }
 
     @DeleteMapping("/deleteuseraccount")
-    public ResponseEntity<?> deleteUserAccount(@RequestBody Account account){
-        accountSummary.delete(account);
+    public ResponseEntity<?> deleteUserAccount(@RequestBody AccountDTO accountDTO){
+        accountSummary.delete(accountDTO);
         return ResponseEntity.ok("Account added Successfully");
     }
 }

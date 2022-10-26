@@ -1,7 +1,7 @@
 package com.pineapple.service;
 
 import com.pineapple.model.UserEntity;
-import com.pineapple.model.UserDTO;
+import com.pineapple.dto.UserDTO;
 import com.pineapple.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;

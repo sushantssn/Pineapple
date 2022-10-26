@@ -1,6 +1,7 @@
 package com.pineapple.controller;
 
 import com.pineapple.pojo.Scheme;
+import com.pineapple.dto.SchemeDTO;
 import com.pineapple.service.SchemeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -24,11 +25,13 @@ public class SchemesController {
 
 
     @PostMapping("/allscheme")
-    public ResponseEntity<?> getAllSchemes(@RequestBody Scheme scheme){
+    public ResponseEntity<?> getAllSchemes(@RequestBody SchemeDTO schemeDTO){
 
-        schemeService.addScheme(scheme);
+        System.out.println(schemeDTO.getSchemeDescJson().toString());
+//        System.out.println(scheme.getSchemeDescJson().textValue());
+       schemeService.addScheme(schemeDTO);
 
-        return ResponseEntity.ok(scheme);
+        return ResponseEntity.ok(schemeDTO);
 
     }
 }

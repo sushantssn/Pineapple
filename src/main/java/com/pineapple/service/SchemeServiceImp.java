@@ -1,6 +1,7 @@
 package com.pineapple.service;
 
 import com.pineapple.pojo.Scheme;
+import com.pineapple.dto.SchemeDTO;
 import com.pineapple.repositories.SchemeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,7 +20,18 @@ public class SchemeServiceImp implements SchemeService{
     }
 
     @Override
-    public void addScheme(Scheme scheme) {
-         schemeRepository.save(scheme);
+    public void addScheme(SchemeDTO schemeDTO) {
+        Scheme scheme = mapSchemeDtoToScheme(schemeDTO);
+        schemeRepository.save(scheme);
+    }
+
+    private Scheme mapSchemeDtoToScheme(SchemeDTO schemeDTO) {
+        Scheme scheme = new Scheme();
+        scheme.setSchemeName(schemeDTO.getSchemeName());
+        scheme.setSchemeDesc(schemeDTO.getSchemeDesc());
+        scheme.setNoOfDays(schemeDTO.getNoOfDays());
+        scheme.setRateOfIntrest(schemeDTO.getRateOfIntrest());
+        scheme.setSchemeJSON(schemeDTO.getSchemeDescJson().toString());
+        return scheme;
     }
 }

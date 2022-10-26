@@ -1,7 +1,7 @@
 package com.pineapple.controller;
 
 import com.pineapple.model.UserEntity;
-import com.pineapple.model.UserDTO;
+import com.pineapple.dto.UserDTO;
 import com.pineapple.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

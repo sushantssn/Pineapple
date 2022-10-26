@@ -1,7 +1,7 @@
 package com.pineapple.service;
 
 import com.pineapple.pojo.Scheme;
-import org.springframework.http.ResponseEntity;
+import com.pineapple.dto.SchemeDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,5 +10,5 @@ public interface SchemeService {
 
     List<Scheme> getAllSchemes();
 
-    void addScheme(Scheme scheme);
+    void addScheme(SchemeDTO scheme);
 }

@@ -1,6 +1,6 @@
 package com.pineapple.controller;
 
-import com.pineapple.model.UserDTO;
+import com.pineapple.dto.UserDTO;
 import com.pineapple.service.JwtUserDetailsService;
 import com.pineapple.config.JwtTokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;

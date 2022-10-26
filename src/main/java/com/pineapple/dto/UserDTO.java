@@ -1,4 +1,4 @@
-package com.pineapple.model;
+package com.pineapple.dto;
 
 public class UserDTO {
 

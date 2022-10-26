@@ -1,5 +1,6 @@
 package com.pineapple.service;
 
+import com.pineapple.dto.AccountDTO;
 import com.pineapple.pojo.Account;
 import com.pineapple.repositories.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,18 +27,19 @@ public class AccountSummaryImpl implements AccountSummary{
     }
 
     @Override
-    public void add(Account account) {
-        accountRepository.save(account);
+    public void add(AccountDTO accountDTO) {
+
+        accountRepository.save(mapAccountDtoToAccount(accountDTO));
     }
 
     @Override
-    public void update(Account account) {
-        accountRepository.save(account);
+    public void update(AccountDTO accountDTO) {
+        accountRepository.save(mapAccountDtoToAccount(accountDTO));
     }
 
     @Override
-    public void delete(Account account) {
-        accountRepository.delete(account);
+    public void delete(AccountDTO accountDTO) {
+        accountRepository.delete(mapAccountDtoToAccount(accountDTO));
     }
 
     @Override
@@ -51,5 +53,16 @@ public class AccountSummaryImpl implements AccountSummary{
         }
     }
 
+    private Account mapAccountDtoToAccount(AccountDTO accountDTO) {
+        Account account = new Account();
+        account.setUserId(accountDTO.getUserId());
+        account.setUserName(accountDTO.getUserName());
+        account.setInvestedAmount(accountDTO.getInvestedAmount());
+        account.setMaturityAmount(accountDTO.getMaturityAmount());
+        account.setInvestmentDate(accountDTO.getInvestmentDate());
+        account.setMaturityDate(accountDTO.getMaturityDate());
+        account.setSchemeDes(accountDTO.getSchemeDes());
+        return account;
+    }
 
 }

@@ -1,11 +1,9 @@
-package com.pineapple.pojo;
+package com.pineapple.dto;
 
-import javax.persistence.*;
+import com.fasterxml.jackson.databind.JsonNode;
 
-@Entity
-public class Scheme {
-    @Id
-    @GeneratedValue
+public class SchemeDTO {
+
     private int id;
     private String schemeName;
     private int noOfDays;
@@ -13,19 +11,18 @@ public class Scheme {
 
     private String schemeDesc;
 
-    @Column(columnDefinition = "text")
-    private String schemeJSON;
-    public Scheme() {
+    private JsonNode schemeDescJson;
+
+    public SchemeDTO() {
         super();
     }
 
-    public Scheme(int id, String schemeName, int noOfDays, double rateOfIntrest, String schemeDesc,String schemeJSON) {
+    public SchemeDTO(int id, String schemeName, int noOfDays, double rateOfIntrest, String schemeDesc) {
         this.id = id;
         this.schemeName = schemeName;
         this.noOfDays = noOfDays;
         this.rateOfIntrest = rateOfIntrest;
         this.schemeDesc = schemeDesc;
-        this.schemeJSON=schemeJSON;
     }
 
     public int getId() {
@@ -68,11 +65,11 @@ public class Scheme {
         this.schemeDesc = schemeDesc;
     }
 
-    public String getSchemeJSON() {
-        return schemeJSON;
+    public JsonNode getSchemeDescJson() {
+        return schemeDescJson;
     }
 
-    public void setSchemeJSON(String schemeJSON) {
-        this.schemeJSON = schemeJSON;
+    public void setSchemeDescJson(JsonNode schemeDescJson) {
+        this.schemeDescJson = schemeDescJson;
     }
 }

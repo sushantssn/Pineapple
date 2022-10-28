@@ -1,6 +1,6 @@
 package com.pineapple.service;
 
-import com.pineapple.model.UserEntity;
+import com.pineapple.entity.UserEntity;
 import com.pineapple.dto.UserDTO;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
 package com.pineapple.service;
 
-import com.pineapple.pojo.Scheme;
+import com.pineapple.entity.Scheme;
 import com.pineapple.dto.SchemeDTO;
 import org.springframework.stereotype.Service;
 

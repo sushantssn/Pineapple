@@ -1,4 +1,4 @@
-package com.pineapple.pojo;
+package com.pineapple.entity;
 
 import javax.persistence.*;
 

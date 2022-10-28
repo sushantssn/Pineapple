@@ -1,8 +1,9 @@
-package com.pineapple.model;
+package com.pineapple.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "users",schema = "public")
@@ -22,6 +23,14 @@ public class UserEntity {
 
     @Column(name = "isAdmin")
     private String isAdmin;
+
+    @OneToOne(fetch=FetchType.LAZY)
+    private UserWallet userWallet;
+
+
+    @OneToMany(mappedBy = "userEntity")
+    private List<Account> accountList;
+
 
     public UserEntity(String username, String password) {
         this.username = username;
@@ -68,6 +77,14 @@ public UserEntity(){
 
     public void setIsAdmin(String isAdmin) {
         this.isAdmin = isAdmin;
+    }
+
+    public UserWallet getUserWallet() {
+        return userWallet;
+    }
+
+    public void setUserWallet(UserWallet userWallet) {
+        this.userWallet = userWallet;
     }
 }
 

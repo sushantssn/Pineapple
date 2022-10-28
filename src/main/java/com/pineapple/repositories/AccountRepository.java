@@ -1,6 +1,6 @@
 package com.pineapple.repositories;
 
-import com.pineapple.pojo.Account;
+import com.pineapple.entity.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,5 +1,7 @@
 package com.pineapple.dto;
 
+import com.pineapple.entity.UserWallet;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,7 +13,6 @@ public class AccountDTO {
     private int id;
     private int userId;
     private String userName;
-
     private String schemeDes;
     private Date investmentDate;
     private Date maturityDate;
@@ -99,8 +100,9 @@ public class AccountDTO {
 
     @Override
     public String toString() {
-        return "Account{" +
-                "userId='" + userId + '\'' +
+        return "AccountDTO{" +
+                "id=" + id +
+                ", userId=" + userId +
                 ", userName='" + userName + '\'' +
                 ", schemeDes='" + schemeDes + '\'' +
                 ", investmentDate=" + investmentDate +

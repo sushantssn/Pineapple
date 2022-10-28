@@ -1,8 +1,9 @@
-package com.pineapple.pojo;
+package com.pineapple.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import java.util.Date;
 @Entity
 public class Account {
@@ -11,12 +12,14 @@ public class Account {
     private int id;
     private int userId;
     private String userName;
-
     private String schemeDes;
     private Date investmentDate;
     private Date maturityDate;
     private int investedAmount;
     private int maturityAmount;
+
+    @ManyToOne
+    private UserEntity userEntity;
 
     public Account() {
         super();

@@ -1,7 +1,7 @@
 package com.pineapple.service;
 
 import com.pineapple.dto.AccountDTO;
-import com.pineapple.pojo.Account;
+import com.pineapple.entity.Account;
 import java.util.List;
 
 public interface AccountSummary {

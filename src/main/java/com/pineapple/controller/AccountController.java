@@ -1,7 +1,6 @@
 package com.pineapple.controller;
 
 import com.pineapple.dto.AccountDTO;
-import com.pineapple.pojo.Account;
 import com.pineapple.service.AccountSummary;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

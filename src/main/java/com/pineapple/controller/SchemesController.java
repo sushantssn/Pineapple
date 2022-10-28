@@ -1,6 +1,6 @@
 package com.pineapple.controller;
 
-import com.pineapple.pojo.Scheme;
+import com.pineapple.entity.Scheme;
 import com.pineapple.dto.SchemeDTO;
 import com.pineapple.service.SchemeService;
 import org.springframework.beans.factory.annotation.Autowired;

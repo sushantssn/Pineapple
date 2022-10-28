@@ -1,6 +1,6 @@
 package com.pineapple.repositories;
 
-import com.pineapple.model.UserEntity;
+import com.pineapple.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
